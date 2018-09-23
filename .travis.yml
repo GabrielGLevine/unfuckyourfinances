@@ -1,20 +1,27 @@
 language: ruby
 rvm:
-  - 2.5.1
-
+- 2.5.1
 install:
-  - bundle install
-  - nvm install node
-  - node -v
-  - npm i -g yarn
-  - yarn
-
+- bundle install
+- nvm install node
+- node -v
+- npm i -g yarn
+- yarn
 script:
-  - bundle exec rails webpacker:compile
-  - bundle exec rake
-
+- bundle exec rails webpacker:compile
+- bundle exec rake
 cache:
   bundler: true
   directories:
-    - node_modules
+  - node_modules
   yarn: true
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: AKIAI7PIITRQU6SIGAPQ
+  secret_access_key:
+    secure: eG2miDxUsEpIxv1ICcUlQvSZrfq7wbqxMTgbtUQVlFaYgYKH2IAVvpJv6s9UGe4q+HEFnpNS+QwrBoacEg3TpZLdPaTP6S1TvkBVrKuJTvM4QxtEDLxJVTP7Jh/be7P4VEyscvjymtmMUWvFJMjhxfh1zs7LEqRClE7LD2RHR6UtBQnQKZvPwNotMcjg3KUrr4TgCXgjW/F6HxnP1WjzchJMgY+qj2cAeO5SV3mTOHtoAo9qL0L7uAQBvebGqaUMKtzjo3lK1pnQycXrhb1uWWu6EKGVpes5l6HTzeFPYa/usCOTtYFJihIIm9tVgJq/OVtpdmXPGcJUHUnvzK+mhEo0V7Eu0ekRpQePy7Nh87W9x+OButm7bp2nqcVTo8sFDzBta6T5A5wMF5i1+x4/rg5pnhFFqztL+MQP+Bch2wr7ayZf5++9SY4DIuy7xfsjjTlriVRRhScon93INpcNl6y1uaz+LG7nvp7y5S9NwsGNr2bPqXGNKhodGIYyYvYqsyQYnaGE4FZwP7s8+UeMBnpmAWXDWU5hkl4F7GkOmCX4UCKb9MG/jCmaiW5ElUXpx4cRFBP+GoBSPAP9AyuQsVrX3gndWTL62pheFkWDawaQ56yLnqBy9hT0SBWtov2DCNWC05XbuMX+ntr/izmSiF+7Ra9HNF8f5Xmcc9XcJgk=
+  region: us-east-1
+  app: unfuckyourfinances
+  env: unfuckyourfinances-env
+  on:
+    repo: GabrielGLevine/unfuckyourfinances
