@@ -9,6 +9,7 @@
 
 console.log('Hello World from Webpacker')
 
+import '../styles'
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 

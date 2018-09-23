@@ -2,7 +2,11 @@
   "name": "unfuckyourfinances",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
+    "@fortawesome/fontawesome-free-regular": "^5.0.13",
     "@rails/webpacker": "3.5",
+    "bulma": "^0.7.1",
     "stimulus": "^1.1.0"
   },
   "devDependencies": {
