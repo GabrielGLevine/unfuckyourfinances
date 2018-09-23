@@ -23,5 +23,6 @@ deploy:
   region: us-east-1
   app: unfuckyourfinances
   env: unfuckyourfinances-env
+  bucket_name: elasticbeanstalk-us-east-1-381263952706
   on:
     repo: GabrielGLevine/unfuckyourfinances
